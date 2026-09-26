@@ -1,0 +1,377 @@
+[
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  false,
+                           "internalType":  "uint256",
+                           "name":  "id",
+                           "type":  "uint256"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "uint256",
+                           "name":  "amount",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "DepositFunded",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  false,
+                           "internalType":  "uint256",
+                           "name":  "id",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "Disputed",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  false,
+                           "internalType":  "uint256",
+                           "name":  "id",
+                           "type":  "uint256"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "bytes32",
+                           "name":  "hash",
+                           "type":  "bytes32"
+                       }
+                   ],
+        "name":  "EvidenceSubmitted",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  false,
+                           "internalType":  "uint256",
+                           "name":  "id",
+                           "type":  "uint256"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "bytes32",
+                           "name":  "hash",
+                           "type":  "bytes32"
+                       }
+                   ],
+        "name":  "MoveInRecorded",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  false,
+                           "internalType":  "uint256",
+                           "name":  "id",
+                           "type":  "uint256"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "address",
+                           "name":  "recipient",
+                           "type":  "address"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "uint256",
+                           "name":  "amount",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "Settled",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  false,
+                           "internalType":  "uint256",
+                           "name":  "id",
+                           "type":  "uint256"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "address",
+                           "name":  "landlord",
+                           "type":  "address"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "address",
+                           "name":  "tenant",
+                           "type":  "address"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "address",
+                           "name":  "arbitrator",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "TenancyCreated",
+        "type":  "event"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "tenant",
+                           "type":  "address"
+                       },
+                       {
+                           "internalType":  "address",
+                           "name":  "arbitrator",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "createTenancy",
+        "outputs":  [
+                        {
+                            "internalType":  "uint256",
+                            "name":  "",
+                            "type":  "uint256"
+                        }
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "uint256",
+                           "name":  "id",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "fundDeposit",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "payable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "uint256",
+                           "name":  "id",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "getTenancy",
+        "outputs":  [
+                        {
+                            "components":  [
+                                               {
+                                                   "internalType":  "address",
+                                                   "name":  "landlord",
+                                                   "type":  "address"
+                                               },
+                                               {
+                                                   "internalType":  "address",
+                                                   "name":  "tenant",
+                                                   "type":  "address"
+                                               },
+                                               {
+                                                   "internalType":  "address",
+                                                   "name":  "arbitrator",
+                                                   "type":  "address"
+                                               },
+                                               {
+                                                   "internalType":  "uint256",
+                                                   "name":  "depositAmount",
+                                                   "type":  "uint256"
+                                               },
+                                               {
+                                                   "internalType":  "bytes32",
+                                                   "name":  "moveInHash",
+                                                   "type":  "bytes32"
+                                               },
+                                               {
+                                                   "internalType":  "bytes32",
+                                                   "name":  "moveOutHash",
+                                                   "type":  "bytes32"
+                                               },
+                                               {
+                                                   "internalType":  "uint256",
+                                                   "name":  "landlordVote",
+                                                   "type":  "uint256"
+                                               },
+                                               {
+                                                   "internalType":  "uint256",
+                                                   "name":  "tenantVote",
+                                                   "type":  "uint256"
+                                               },
+                                               {
+                                                   "internalType":  "uint256",
+                                                   "name":  "arbitratorVote",
+                                                   "type":  "uint256"
+                                               },
+                                               {
+                                                   "internalType":  "enum RentEscrow.Status",
+                                                   "name":  "status",
+                                                   "type":  "uint8"
+                                               }
+                                           ],
+                            "internalType":  "struct RentEscrow.Tenancy",
+                            "name":  "",
+                            "type":  "tuple"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+
+                   ],
+        "name":  "nextId",
+        "outputs":  [
+                        {
+                            "internalType":  "uint256",
+                            "name":  "",
+                            "type":  "uint256"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "uint256",
+                           "name":  "id",
+                           "type":  "uint256"
+                       },
+                       {
+                           "internalType":  "bytes32",
+                           "name":  "hash",
+                           "type":  "bytes32"
+                       }
+                   ],
+        "name":  "recordMoveIn",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "uint256",
+                           "name":  "id",
+                           "type":  "uint256"
+                       },
+                       {
+                           "internalType":  "bytes32",
+                           "name":  "hash",
+                           "type":  "bytes32"
+                       }
+                   ],
+        "name":  "submitEvidence",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "uint256",
+                           "name":  "",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "tenancies",
+        "outputs":  [
+                        {
+                            "internalType":  "address",
+                            "name":  "landlord",
+                            "type":  "address"
+                        },
+                        {
+                            "internalType":  "address",
+                            "name":  "tenant",
+                            "type":  "address"
+                        },
+                        {
+                            "internalType":  "address",
+                            "name":  "arbitrator",
+                            "type":  "address"
+                        },
+                        {
+                            "internalType":  "uint256",
+                            "name":  "depositAmount",
+                            "type":  "uint256"
+                        },
+                        {
+                            "internalType":  "bytes32",
+                            "name":  "moveInHash",
+                            "type":  "bytes32"
+                        },
+                        {
+                            "internalType":  "bytes32",
+                            "name":  "moveOutHash",
+                            "type":  "bytes32"
+                        },
+                        {
+                            "internalType":  "uint256",
+                            "name":  "landlordVote",
+                            "type":  "uint256"
+                        },
+                        {
+                            "internalType":  "uint256",
+                            "name":  "tenantVote",
+                            "type":  "uint256"
+                        },
+                        {
+                            "internalType":  "uint256",
+                            "name":  "arbitratorVote",
+                            "type":  "uint256"
+                        },
+                        {
+                            "internalType":  "enum RentEscrow.Status",
+                            "name":  "status",
+                            "type":  "uint8"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "uint256",
+                           "name":  "id",
+                           "type":  "uint256"
+                       },
+                       {
+                           "internalType":  "uint256",
+                           "name":  "choice",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "vote",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    }
+]
